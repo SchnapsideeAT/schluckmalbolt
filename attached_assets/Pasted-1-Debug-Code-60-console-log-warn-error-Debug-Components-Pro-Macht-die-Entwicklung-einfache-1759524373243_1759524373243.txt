@@ -1,0 +1,89 @@
+1️⃣ Debug-Code (~60 console.log/warn/error + Debug Components)
+
+Pro:
+
+Macht die Entwicklung einfacher, Fehler und State sichtbar.
+
+Contra:
+
+Vor Production muss alles entfernt oder deaktiviert werden, sonst:
+
+Performance-Einbußen (insbesondere viele console.error in Hooks)
+
+Eventuelle Speicherleaks durch Debug-Komponenten
+
+Sicherheitsrisiko, weil interne Logs in Production sichtbar sein könnten
+
+Fazit:
+
+Absolut richtig, diese zu entfernen.
+
+SafeAreaDebugger ist nur Dev, sollte komplett raus aus Production.
+
+2️⃣ Unbenutzte UI-Komponenten (29 Files)
+
+Pro:
+
+Radix UI ist modular – unbenutzte Komponenten aufzuräumen spart Bundle-Size und Klarheit.
+
+Contra:
+
+Wenn in Zukunft geplant ist, z. B. carousel oder popover zu verwenden, muss man sie wieder installieren → minimaler Overhead.
+
+Fazit:
+
+Kritisch: Unbenutzte Komponenten jetzt löschen → reduziert potentielle Bugs durch Imports, vereinfacht Build.
+
+3️⃣ Unbenutzte Dependencies (~20+)
+
+Pro:
+
+Entfernen spart Bundle-Size (~2–3 MB laut Analyse)
+
+Reduziert potenzielle Sicherheits- oder Update-Risiken
+
+Contra:
+
+Einige Pakete wie zod oder react-query könnten später wieder benötigt werden, also auf geplante Features achten.
+
+Fazit:
+
+Kritisch prüfen, dann löschen. Nicht blind alle entfernen.
+
+4️⃣ Unbenutzte Assets
+
+Sehr geringes Risiko, kann problemlos gelöscht werden.
+
+5️⃣ Sonstige Hinweise
+
+DevOverlay ist korrekt nur für DEV, kein Problem.
+
+Alte Kommentare/TODO/FIXME sind unkritisch, können aber aufräumen.
+
+🔹 Kritische Bewertung der KI-Analyse
+
+Stärken:
+
+Sehr gründlich, deckt Debug-Code, unbenutzte Komponenten, Dependencies und Assets ab
+
+Gibt klare Prioritäten (Debug raus = Priority 1, Cleanup Packages/UI = Priority 2)
+
+Schwächen / Risiken:
+
+KI schlägt teilweise „radikal löschen“ vor → muss kritisch geprüft werden:
+
+Unbenutzte Dependencies könnten für geplante Features nötig sein
+
+Unbenutzte UI-Komponenten evtl. nur temporär ungenutzt
+
+2–3 MB Bundle-Save klingt gut, aber der größte Gewinn ist Code-Cleanliness, nicht nur Größe
+
+Keine Hinweise auf Testen nach Cleanup → sehr wichtig, sonst kann Build oder Styles brechen
+
+🔹 Fazit
+
+Analyse sehr nützlich, fast alles korrekt priorisiert.
+
+Kritischer Punkt: Vor allem Dependencies und UI-Files nur löschen, wenn du sicher bist, dass sie nicht bald gebraucht werden.
+
+Debug-Code + SafeAreaDebugger → unbedingt raus vor Production, das ist korrekt und dringend.

@@ -1,0 +1,459 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 14%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 48 91% 60%;
+    --primary-foreground: 0 0% 10%;
+    
+    --primary-glow: 48 91% 70%;
+
+    --secondary: 0 0% 22%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 48 91% 60%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 48 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* Category colors */
+    --category-truth: 199 91% 42%;
+    --category-task: 265 27% 57%;
+    --category-group: 101 55% 44%;
+    --category-duel: 38 91% 59%;
+    --category-wildcard: 352 78% 58%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(48 91% 60%), hsl(48 91% 50%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 16%), hsl(0 0% 14%));
+    --gradient-glow: radial-gradient(circle at 50% 0%, hsl(48 91% 60% / 0.1), transparent 70%);
+
+    /* Shadows */
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(48 91% 60% / 0.2);
+    --shadow-button: 0 4px 20px hsl(48 91% 60% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    font-family: 'Quicksand', system-ui, sans-serif !important;
+    font-weight: 700 !important;
+    box-sizing: border-box;
+  }
+
+  html {
+    height: 100%;
+    background: hsl(0 0% 10%);
+    overflow: hidden;
+    width: 100%;
+    /* iOS Safari Touch-Fix */
+    overscroll-behavior: none;
+    touch-action: manipulation;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Quicksand', system-ui, sans-serif;
+    font-weight: 700;
+    background: hsl(0 0% 10%);
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    /* iOS Safari Touch-Fix */
+    overscroll-behavior: none;
+    touch-action: manipulation;
+    width: 100%;
+    position: relative;
+    
+    /* Prevent text selection and copy/paste on mobile */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+
+  img {
+    /* Prevent image dragging and long-press menu */
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+    pointer-events: auto; /* Keep touch events for interactive elements */
+  }
+
+  #root {
+    min-height: 100vh;
+    background: hsl(0 0% 10%);
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  /* DEBUG MODE - Visuelle Rahmen */
+  body.debug-mode #root {
+    outline: 3px solid red !important;
+  }
+
+  body.debug-mode .h-screen,
+  body.debug-mode .min-h-screen {
+    outline: 2px solid blue !important;
+  }
+
+  body.debug-mode .page-container,
+  body.debug-mode .content-container,
+  body.debug-mode .responsive-container,
+  body.debug-mode .scrollable-container {
+    outline: 1px solid green !important;
+  }
+
+}
+
+@layer utilities {
+  /* Removed dvh utilities - using 100vh (h-screen) for Capacitor native app */
+}
+
+@layer components {
+  /* Container System - Einheitliches Padding */
+  .page-container {
+    @apply px-4 py-6;
+    min-height: 100vh;
+  }
+
+  .content-container {
+    @apply max-w-2xl mx-auto;
+  }
+
+  .dialog-container {
+    @apply px-4;
+  }
+
+  .responsive-container {
+    @apply w-full max-w-md mx-auto px-4;
+  }
+
+  .responsive-section {
+    @apply w-full max-w-2xl mx-auto;
+  }
+
+  /* Scrollable System - Always scrollable */
+  .scrollable-container {
+    height: 100vh;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overscroll-behavior: contain;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .scrollable-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+
+  /* Legacy scrollable-enabled class - no longer needed but kept for compatibility */
+  .scrollable-enabled {
+    /* All styles moved to .scrollable-container */
+  }
+
+  /* No Scroll for static pages */
+  .no-scroll {
+    overflow: hidden !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    touch-action: pan-x pinch-zoom;
+  }
+
+  /* Animations */
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+    will-change: transform, opacity;
+  }
+
+  .slide-up {
+    animation: slideUp 0.4s ease-out;
+    will-change: transform, opacity;
+  }
+  
+  .animate-enter {
+    animation: cardEnter 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    will-change: transform, opacity;
+  }
+
+  /* Logo Animations - Sequential */
+  .logo-start-center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.3);
+    opacity: 0;
+    animation: logoPopInCenter 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    will-change: transform, opacity;
+    z-index: 50;
+  }
+
+  .logo-slide-to-position {
+    animation: logoSlideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    will-change: transform, opacity;
+  }
+
+  .logo-final-position {
+    position: relative;
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+
+  /* Button Animations - Staggered */
+  .buttons-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .buttons-appear {
+    animation: buttonsSlideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    will-change: transform, opacity;
+  }
+
+  .button-stagger-1 {
+    animation-delay: 0s;
+  }
+
+  .button-stagger-2 {
+    animation-delay: 0.1s;
+  }
+
+  .button-stagger-3 {
+    animation-delay: 0.2s;
+  }
+
+  .button-stagger-4 {
+    animation-delay: 0.3s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-start-center,
+    .logo-slide-to-position,
+    .buttons-appear {
+      animation: none;
+      transform: none;
+      opacity: 1;
+      position: relative;
+    }
+  }
+}
+
+@keyframes cardEnter {
+  0% {
+    transform: rotateY(90deg) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes accordion-down {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes accordion-up {
+  0% {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes logoPopInCenter {
+  0% {
+    transform: translate(-50%, -50%) scale(0.3);
+    opacity: 0;
+  }
+  60% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes logoSlideUp {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -200%) scale(0.9);
+    opacity: 1;
+  }
+}
+
+@keyframes buttonsSlideUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceLeft {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-25%);
+  }
+}
+
+@keyframes bounceRight {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(25%);
+  }
+}
+
+.animate-bounce-left {
+  animation: bounceLeft 1s ease-in-out infinite;
+}
+
+.animate-bounce-right {
+  animation: bounceRight 1s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(14deg);
+  }
+  60%, 100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-wave {
+  animation: wave 2.5s ease-in-out infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+@keyframes cardGlowPulse {
+  0% { opacity: 0.25; }
+  12.5% { opacity: 0.375; }
+  25% { opacity: 0.5; }
+  37.5% { opacity: 0.625; }
+  50% { opacity: 0.75; }
+  62.5% { opacity: 0.625; }
+  75% { opacity: 0.5; }
+  87.5% { opacity: 0.375; }
+  100% { opacity: 0.25; }
+}
+
+/* Swing Library CSS */
+.swing-stack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  overscroll-behavior: contain;
+  overflow: hidden;
+}
+
+.swing-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+  will-change: transform;
+}

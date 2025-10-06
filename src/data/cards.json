@@ -1,0 +1,602 @@
+[
+  {
+    "id": 1,
+    "category": "Wahrheit",
+    "text": "Wen aus der Gruppe würdest du nicht deinen Eltern vorstellen?",
+    "drinks": 3
+  },
+  {
+    "id": 2,
+    "category": "Wahrheit",
+    "text": "Wen aus der Gruppe findest du am attraktivsten?",
+    "drinks": 2
+  },
+  {
+    "id": 3,
+    "category": "Wahrheit",
+    "text": "Was war dein schlimmster Kuss und warum?",
+    "drinks": 2
+  },
+  {
+    "id": 4,
+    "category": "Wahrheit",
+    "text": "Wen aus der Gruppe würdest du am ehesten daten?",
+    "drinks": 4
+  },
+  {
+    "id": 5,
+    "category": "Wahrheit",
+    "text": "Kiss, Marry, Kill: Nenne drei Personen aus der Gruppe und ordne sie zu.",
+    "drinks": 2
+  },
+  {
+    "id": 6,
+    "category": "Wahrheit",
+    "text": "Ranke deine Sexpartner vom besten zum schlechtesten.",
+    "drinks": 3
+  },
+  {
+    "id": 7,
+    "category": "Wahrheit",
+    "text": "Was war das Peinlichste, das dir je passiert ist?",
+    "drinks": 4
+  },
+  {
+    "id": 8,
+    "category": "Wahrheit",
+    "text": "Was ist ein Geheimnis, das du noch niemandem erzählt hast?",
+    "drinks": 5
+  },
+  {
+    "id": 9,
+    "category": "Wahrheit",
+    "text": "Wie hoch ist dein Bodycount?",
+    "drinks": 5
+  },
+  {
+    "id": 10,
+    "category": "Wahrheit",
+    "text": "Was hast du für einen Fetisch?",
+    "drinks": 3
+  },
+  {
+    "id": 11,
+    "category": "Wahrheit",
+    "text": "Zeige dein Bankkonto.",
+    "drinks": 5
+  },
+  {
+    "id": 12,
+    "category": "Wahrheit",
+    "text": "Wann hast du dich das letzte Mal selbstbefriedigt?",
+    "drinks": 4
+  },
+  {
+    "id": 13,
+    "category": "Wahrheit",
+    "text": "Wer hat den schlechtesten Style aus der Gruppe?",
+    "drinks": 3
+  },
+  {
+    "id": 14,
+    "category": "Wahrheit",
+    "text": "Ich habe noch nie auf einer Party Sex gehabt, wer schon hat muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 15,
+    "category": "Wahrheit",
+    "text": "Ich habe noch nie Nudes verschickt, wer schon hat muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 16,
+    "category": "Wahrheit",
+    "text": "Ich habe noch nie unpassend eine Erektion bekommen, wer schon hat muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 17,
+    "category": "Wahrheit",
+    "text": "Ich habe noch nie 69 gehabt, wer schon hat muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 18,
+    "category": "Wahrheit",
+    "text": "Ich habe noch nie in einer Dating-App gelogen, wer schon hat muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 19,
+    "category": "Wahrheit",
+    "text": "Ich habe noch nie einen Orgasmus vorgetäuscht, wer schon hat muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 20,
+    "category": "Wahrheit",
+    "text": "Ich habe noch nie beim Vortrinken gekotzt, wer schon hat muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 21,
+    "category": "Wahrheit",
+    "text": "Ich habe noch nie betrunken einen Ex-Partner angeschrieben, wer schon hat muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 22,
+    "category": "Wahrheit",
+    "text": "Ich habe noch nie in der Öffentlichkeit Sex gehabt, wer schon hat muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 23,
+    "category": "Wahrheit",
+    "text": "Ich habe noch nie einen Crush auf einen Lehrer oder Chef gehabt, wer schon hat muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 24,
+    "category": "Wahrheit",
+    "text": "Ich habe noch nie einen One-Night-Stand gehabt, wer schon hat muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 25,
+    "category": "Wahrheit",
+    "text": "Wählt den notgeilsten Spieler, die Person muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 26,
+    "category": "Wahrheit",
+    "text": "Wählt den attraktivsten Spieler, die Person muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 27,
+    "category": "Wahrheit",
+    "text": "Wählt den unlustigsten Spieler, die Person muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 28,
+    "category": "Wahrheit",
+    "text": "Wählt den betrunkensten Spieler, die Person muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 29,
+    "category": "Wahrheit",
+    "text": "Wählt den Spieler, der am besten im Bett ist, die Person muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 30,
+    "category": "Wahrheit",
+    "text": "Wählt den Spieler mit dem besten Outfit, die Person muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 31,
+    "category": "Wahrheit",
+    "text": "Wählt den dümmsten Spieler, die Person muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 32,
+    "category": "Wahrheit",
+    "text": "Was ist deine größte Insecurity?",
+    "drinks": 3
+  },
+  {
+    "id": 33,
+    "category": "Aufgabe",
+    "text": "Die Gruppe darf dir eine Challenge geben.",
+    "drinks": 5
+  },
+  {
+    "id": 34,
+    "category": "Aufgabe",
+    "text": "Versuche einen Handstand und halte ihn mindestens 10 Sekunden.",
+    "drinks": 2
+  },
+  {
+    "id": 35,
+    "category": "Aufgabe",
+    "text": "Schreib deinem Ex Partner \"Ich vermisse dich\".",
+    "drinks": 5
+  },
+  {
+    "id": 36,
+    "category": "Aufgabe",
+    "text": "Zeige das letzte Bild in deiner Galerie.",
+    "drinks": 3
+  },
+  {
+    "id": 37,
+    "category": "Aufgabe",
+    "text": "Küsse jemanden aus der Gruppe.",
+    "drinks": 5
+  },
+  {
+    "id": 38,
+    "category": "Aufgabe",
+    "text": "Mache einen Prankcall bei deinen Eltern.",
+    "drinks": 5
+  },
+  {
+    "id": 39,
+    "category": "Aufgabe",
+    "text": "Bringe jemanden aus der Gruppe zum Lachen – wer zuerst lacht, trinkt.",
+    "drinks": 2
+  },
+  {
+    "id": 40,
+    "category": "Aufgabe",
+    "text": "Hot Seat: Jeder aus der Gruppe darf dir eine Frage stellen, für jede verweigerte Antwort musst du trinken.",
+    "drinks": 1
+  },
+  {
+    "id": 41,
+    "category": "Aufgabe",
+    "text": "Zeige ein Talent. Wenn die Gruppe es schlecht findet musst du trinken.",
+    "drinks": 2
+  },
+  {
+    "id": 42,
+    "category": "Aufgabe",
+    "text": "Lies die letzte Nachricht deiner Mutter laut vor.",
+    "drinks": 4
+  },
+  {
+    "id": 43,
+    "category": "Aufgabe",
+    "text": "Wer bin ich?: Du hast 10 Fragen Zeit. Wenn du verlierst, musst du trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 44,
+    "category": "Aufgabe",
+    "text": "Sag zwei Wahrheiten und eine Lüge. Errät die Gruppe die Lüge, musst du trinken. Liegen sie falsch, müssen sie trinken.",
+    "drinks": 2
+  },
+  {
+    "id": 45,
+    "category": "Aufgabe",
+    "text": "Mache einen Bodyshot mit einer Person deiner Wahl.",
+    "drinks": 4
+  },
+  {
+    "id": 46,
+    "category": "Aufgabe",
+    "text": "Tausche ein Kleidungsstück mit einer Person deiner Wahl.",
+    "drinks": 4
+  },
+  {
+    "id": 47,
+    "category": "Aufgabe",
+    "text": "Zeichnen: Die Gruppe muss deine Zeichnung innerhalb von 60 Sekunden erraten.",
+    "drinks": 3
+  },
+  {
+    "id": 48,
+    "category": "Aufgabe",
+    "text": "Umschreiben: Erkläre einen Begriff, ohne ihn zu nennen.",
+    "drinks": 3
+  },
+  {
+    "id": 49,
+    "category": "Aufgabe",
+    "text": "Pantomime: Stelle etwas nur mit Gesten innerhalb von 60 Sekunden dar, ohne zu sprechen. Die Gruppe muss raten.",
+    "drinks": 3
+  },
+  {
+    "id": 50,
+    "category": "Aufgabe",
+    "text": "Wirf eine Münze: Bei Kopf musst du trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 51,
+    "category": "Aufgabe",
+    "text": "Twerk zu einem Song.",
+    "drinks": 5
+  },
+  {
+    "id": 52,
+    "category": "Aufgabe",
+    "text": "Kiss or Slap eine Person.",
+    "drinks": 2
+  },
+  {
+    "id": 53,
+    "category": "Aufgabe",
+    "text": "Gib einer Person einen Lap Dance.",
+    "drinks": 5
+  },
+  {
+    "id": 54,
+    "category": "Aufgabe",
+    "text": "Zieh dich bis zur Unterwäsche aus für die nächsten 5 Minuten.",
+    "drinks": 5
+  },
+  {
+    "id": 55,
+    "category": "Aufgabe",
+    "text": "Die Gruppe darf bestimmen, was du in deiner Story posten sollst.",
+    "drinks": 5
+  },
+  {
+    "id": 56,
+    "category": "Aufgabe",
+    "text": "Zeig deinen besten Tanzmove.",
+    "drinks": 2
+  },
+  {
+    "id": 57,
+    "category": "Gruppe",
+    "text": "Stille Post, wer Fehler macht muss trinken.",
+    "drinks": 5
+  },
+  {
+    "id": 58,
+    "category": "Gruppe",
+    "text": "3 Minuten lang absolut still sein.",
+    "drinks": 5
+  },
+  {
+    "id": 59,
+    "category": "Gruppe",
+    "text": "Ich packe meinen Koffer, wer Fehler macht muss trinken.",
+    "drinks": 5
+  },
+  {
+    "id": 60,
+    "category": "Gruppe",
+    "text": "Flaschendrehen: Dreht die Flasche. Derjenige, auf den sie zeigt, muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 61,
+    "category": "Gruppe",
+    "text": "Reim König: Macht nacheinander Reime, wer scheitert muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 62,
+    "category": "Gruppe",
+    "text": "Verbannt ein Wort: Wer es sagt, trinkt.",
+    "drinks": 3
+  },
+  {
+    "id": 63,
+    "category": "Gruppe",
+    "text": "Song erraten: Spiele einen zufälligen Song ab. Wer ihn zuerst errät, muss nicht trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 64,
+    "category": "Gruppe",
+    "text": "Macht ein Gruppenfoto.",
+    "drinks": 2
+  },
+  {
+    "id": 65,
+    "category": "Gruppe",
+    "text": "Wer als erstes sein Handy benutzt, muss trinken.",
+    "drinks": 5
+  },
+  {
+    "id": 66,
+    "category": "Gruppe",
+    "text": "Nennt nacheinander ein Wort in alphabetischer Reihenfolge. Wer keins findet oder zu lange braucht, muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 67,
+    "category": "Gruppe",
+    "text": "Jeder bietet, wie viel er von etwas schafft, z. B. Liegestütze. Der Höchstbietende muss es machen: Schafft er es, trinkt die Gruppe, sonst trinkt er.",
+    "drinks": 5
+  },
+  {
+    "id": 68,
+    "category": "Gruppe",
+    "text": "Jeder hat einen Versuch, die Flasche richtig zu flippen. Wer scheitert, muss trinken.",
+    "drinks": 2
+  },
+  {
+    "id": 69,
+    "category": "Duell",
+    "text": "Nennt gleichzeitig eine Farbe, wenn ihr euch nicht einig seid trinkt.",
+    "drinks": 3
+  },
+  {
+    "id": 70,
+    "category": "Duell",
+    "text": "Nennt gleichzeitig eine Zahl von 1-10, wenn ihr euch nicht einig seid trinkt.",
+    "drinks": 3
+  },
+  {
+    "id": 71,
+    "category": "Duell",
+    "text": "Nennt die Lieblingsfarbe des anderen. Wer sie falsch hat, muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 72,
+    "category": "Duell",
+    "text": "Nennt den Geburtstag des anderen. Wer es falsch hat, muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 73,
+    "category": "Duell",
+    "text": "Armdrücken: Fordere jemanden heraus. Der Verlierer muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 74,
+    "category": "Duell",
+    "text": "Schere, Stein, Papier: Fordere jemanden heraus. Der Verlierer muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 75,
+    "category": "Duell",
+    "text": "Liegestütze: Fordere jemanden heraus. Wer weniger schafft, muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 76,
+    "category": "Duell",
+    "text": "Blickduell: Wer zuerst lacht oder blinzelt, verliert.",
+    "drinks": 3
+  },
+  {
+    "id": 77,
+    "category": "Duell",
+    "text": "Allgemeinwissen: Die Gruppe stellt euch 3 Fragen. Wer die meisten richtig beantwortet, muss nicht trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 78,
+    "category": "Duell",
+    "text": "Wer schafft es schneller, ein Glas Wasser zu exen? Der Verlierer muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 79,
+    "category": "Duell",
+    "text": "Wer schafft es länger die Luft anzuhalten, der Verlierer muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 80,
+    "category": "Duell",
+    "text": "Nennt den schlimmsten Ex des anderen. Wer es falsch hat, muss trinken.",
+    "drinks": 3
+  },
+  {
+    "id": 81,
+    "category": "Wildcard",
+    "text": "Du kannst deine Schlück an jemanden weitergeben.",
+    "drinks": 0
+  },
+  {
+    "id": 82,
+    "category": "Wildcard",
+    "text": "Verdopple die Schlücke eines anderen Spielers.",
+    "drinks": 0
+  },
+  {
+    "id": 83,
+    "category": "Wildcard",
+    "text": "Überspringe die nächste Aufgabe.",
+    "drinks": 0
+  },
+  {
+    "id": 84,
+    "category": "Wildcard",
+    "text": "Tausche dein Getränk mit jemandem deiner Wahl.",
+    "drinks": 0
+  },
+  {
+    "id": 85,
+    "category": "Wildcard",
+    "text": "Alle anderen Spieler trinken statt dir.",
+    "drinks": 0
+  },
+  {
+    "id": 86,
+    "category": "Wildcard",
+    "text": "Wähle einen Spieler, der für dich die Aufgabe übernimmt.",
+    "drinks": 0
+  },
+  {
+    "id": 87,
+    "category": "Wildcard",
+    "text": "Verteile 5 Schlücke an verschiedene Spieler.",
+    "drinks": 0
+  },
+  {
+    "id": 88,
+    "category": "Wildcard",
+    "text": "Der Spieler rechts von dir trinkt für dich.",
+    "drinks": 0
+  },
+  {
+    "id": 89,
+    "category": "Wildcard",
+    "text": "Der älteste Spieler trinkt doppelt.",
+    "drinks": 0
+  },
+  {
+    "id": 90,
+    "category": "Wildcard",
+    "text": "Du kannst eine neue Regel aufstellen.",
+    "drinks": 0
+  },
+  {
+    "id": 91,
+    "category": "Wildcard",
+    "text": "Die Person mit dem höchsten Bodycount muss trinken.",
+    "drinks": 0
+  },
+  {
+    "id": 92,
+    "category": "Wildcard",
+    "text": "Die jüngste Person muss trinken.",
+    "drinks": 0
+  },
+  {
+    "id": 93,
+    "category": "Wildcard",
+    "text": "Alle Singles müssen trinken.",
+    "drinks": 0
+  },
+  {
+    "id": 94,
+    "category": "Wildcard",
+    "text": "Die Person mit dem höchsten Snapscore muss trinken.",
+    "drinks": 0
+  },
+  {
+    "id": 95,
+    "category": "Wildcard",
+    "text": "Alle Mädchen müssen trinken.",
+    "drinks": 0
+  },
+  {
+    "id": 96,
+    "category": "Wildcard",
+    "text": "Alle Jungs müssen trinken.",
+    "drinks": 0
+  },
+  {
+    "id": 97,
+    "category": "Wildcard",
+    "text": "Wähle eine Person, die ihr Getränk exen muss.",
+    "drinks": 0
+  },
+  {
+    "id": 98,
+    "category": "Wildcard",
+    "text": "Die Gruppe darf dein Getränk bestimmen.",
+    "drinks": 0
+  },
+  {
+    "id": 99,
+    "category": "Wildcard",
+    "text": "Alle müssen anstoßen und trinken.",
+    "drinks": 0
+  },
+  {
+    "id": 100,
+    "category": "Wildcard",
+    "text": "Du musst die nächste Aufgabe übernehmen.",
+    "drinks": 0
+  }
+]

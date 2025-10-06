@@ -1,0 +1,56 @@
+1. DVH / Viewport Handling
+
+Du benutzt 100dvh und min-h-dvh korrekt, das ist gut für iOS (Safe Area + Tastatur).
+
+Legacy-Klassen wie min-h-screen tauchen nur in Statistics.tsx, Index.tsx und NotFound.tsx auf. Das kann auf manchen Geräten (vor allem iOS) zu zu großen Containern führen.
+✅ Empfehlung: Diese auf min-h-dvh ändern.
+
+2. ScrollableContainer / Scroll-Mechanik
+
+ScrollableContainer hat fixed height: 100dvh + padding-bottom → das kann auf manchen Geräten den grauen Bereich verursachen, wenn Inhalte länger als der Container sind.
+
+overflow-y: auto wird nur bei Bedarf gesetzt (via useScrollDetection).
+
+Möglicher Bug: Wenn Inhalte dynamisch wachsen (z. B. sehr viele Settings-Optionen), kann es passieren, dass sie hinter dem Safe-Area-Bereich „verschwinden“ oder die Scroll-Bar nicht sichtbar ist.
+
+3. Karten und GameCard
+
+Breite/Höhe der Karten werden per JS auf Basis der Viewport-Breite gesetzt, z. B. iPhone SE 88% × 95%, iPhone 15 93% × 98%.
+
+✅ Das ist gut, aber: intrinsische SVG-Größen können Safari auf iOS manchmal falsch rendern, was zu kleinen Karten führen kann.
+
+Lösung: immer width UND height explizit setzen (wurde laut Analyse gemacht).
+
+4. Safe Area
+
+Safe Area wird global via #root { padding: env(safe-area-inset-*) } berücksichtigt.
+
+scrollable-container hat zusätzlich padding-bottom: calc(12px + env(safe-area-inset-bottom)).
+
+✅ Das ist korrekt umgesetzt.
+
+⚠️ Möglicher Bug: Wenn man zusätzlich noch pb-20 oder extra pb-* in einzelnen Seiten nutzt, kann der graue Bereich „zu hoch“ werden.
+
+5. Legacy / Inkonsistenzen
+
+Statistics.tsx → min-h-screen (muss auf min-h-dvh)
+
+Index.tsx & NotFound.tsx → min-h-screen (optional auf min-h-dvh)
+
+❌ Setup.tsx nutzt ScrollableContainer + min-h-dvh + px/py → überprüfen, ob Padding konsistent ist, sonst kann Scrollbereich nicht bis unten reichen.
+
+6. Fazit – mögliche Bugs
+
+Grauer Bereich bei Scroll-Containern entsteht durch:
+
+Kombination aus fixed height: 100dvh + padding + Safe Area + extra pb-* Klassen
+
+Inhalte, die länger sind als height: 100dvh
+
+Scroll-Probleme auf iOS / Desktop:
+
+overflow-y nur bei Bedarf → wenn Detection fehlschlägt, wird nicht gescrollt
+
+Legacy min-h-screen → kann auf kleineren Bildschirmen Layout kaputt machen
+
+GameCard Rendering → Safari SVG / Intrinsic Sizes, wurde aber größtenteils behoben

@@ -1,0 +1,47 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+bun.lock
+
+# Build outputs
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Capacitor
+ios/App/Pods/
+ios/App/*.xcworkspace
+android/.gradle/
+android/build/
+android/app/build/
+android/.idea/
+
+# Logs
+*.log
+logs/
+.cache/
+.local/
+
+# Replit
+.upm/
+.config/
+.replit
+.breakpoints

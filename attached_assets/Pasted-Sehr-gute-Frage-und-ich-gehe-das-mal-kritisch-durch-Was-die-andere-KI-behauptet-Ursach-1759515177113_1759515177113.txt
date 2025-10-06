@@ -1,0 +1,59 @@
+Sehr gute Frage 👍 – und ich gehe das mal kritisch durch.
+
+⸻
+
+Was die andere KI behauptet:
+	•	Ursache: 100dvh → iOS misst hier nur den „sichtbaren Viewport“ ohne Safe Area → also 818px statt 852px.
+	•	Folge: Dein Body/Root sind nur 818px hoch → unten bleiben 34px schwarz.
+	•	Fix: Statt 100dvh einfach 100vh nutzen → dann nimmst du die vollen 852px, und mit Safe-Area-Padding verschiebst du den Content korrekt.
+
+⸻
+
+Was daran richtig ist ✅
+	•	Auf iOS gibt es tatsächlich einen Unterschied zwischen vh und dvh:
+	•	100vh → nimmt die volle „Layout-Viewport“-Höhe (inkl. Safe Area).
+	•	100dvh → nimmt nur den „Dynamic Viewport“ (also abzüglich Safe Areas).
+	•	In deinem Debug sieht man das ganz klar:
+	•	screen.height = 852px
+	•	window.innerHeight = 818px (→ das ist exakt 100dvh)
+	•	Daher: Wenn du 100dvh benutzt, verschwendest du die 34px Safe Area → schwarzer Balken.
+
+⸻
+
+Was daran problematisch ist ⚠️
+	•	100vh ist auf iOS nicht immer stabil: Safari kann beim Scrollen oder mit der Adressleiste anders rechnen.
+	•	Deshalb hat Apple dvh, lvh und svh eingeführt, um genau solche Bugs sauber zu behandeln.
+	•	Wenn du einfach stumpf auf 100vh umstellst, funktioniert es zwar bei dir in Capacitor, aber du riskierst Layout-Bugs in Safari (z. B. dass Content hinter der URL-Bar verschwindet).
+
+⸻
+
+Bessere Lösung 🎯
+
+Statt nur vh oder nur dvh → Fallback kombinieren:
+
+body,
+#root {
+  min-height: 100dvh; /* für moderne Browser */
+  min-height: 100vh;  /* fallback für Capacitor/iOS */
+}
+
+Oder in Tailwind:
+
+<div class="min-h-[100dvh] min-h-screen">
+
+Damit deckst du beide Fälle ab:
+	•	In Safari mit Adressleiste → dvh passt sich korrekt an.
+	•	In Capacitor (wo du den schwarzen Balken hast) → vh springt ein und füllt die 852px.
+
+⸻
+
+Fazit 👀
+
+Die andere KI hat teilweise recht: Ja, dein schwarzer Balken liegt an 100dvh.
+👉 Aber: Einfach alles stumpf auf 100vh zu ändern ist zu kurz gedacht und kann woanders neue Bugs bringen.
+
+Die saubere Lösung ist: 100dvh UND 100vh kombinieren – so verhinderst du den schwarzen Balken und bist trotzdem zukunftssicher.
+
+⸻
+
+Willst du, dass ich dir den exakten Tailwind-Fix schreibe, den du direkt in deinem Projekt nutzen kannst (inkl. Safari & Capacitor Workaround)?

@@ -1,0 +1,80 @@
+⚠️ Kritische Punkte, die noch fehlen oder verbessert werden müssen
+1. DOM-Verfügbarkeit & Ref-Sync
+
+Swing braucht echte DOM-Elemente, und React rendert asynchron.
+👉 Du musst sicherstellen, dass stackRef.current erst nach dem Rendern der Karten verfügbar ist, sonst ist querySelectorAll('.swing-card') leer → kein Stack.
+
+Fix-Vorschlag:
+Im useEffect, wo du Swing initialisierst:
+
+if (!stackRef.current) return;
+const cards = stackRef.current.querySelectorAll('.swing-card');
+if (!cards.length) return; // Defensive check
+
+2. Re-Rendering-Schutz
+
+Wenn cards ein React-State ist, das sich bei Swipe ändert, triggert dein useEffect neu – Swing zerstört und neu erstellt den Stack.
+→ Das kann zu Flackern oder verlorenem Swipe führen.
+
+Fix-Vorschlag:
+Verwende für Karten lieber ein statisches Array (z. B. useRef für DOM-Elemente) und aktualisiere Inhalte, nicht das ganze Array.
+Oder kontrolliere die Re-Init-Logik mit einem Flag:
+
+if (stack) return; // already initialized
+
+3. Glow-Reset bei throwout fehlt
+
+Aktuell setzt du horizontalDistance nur bei throwin auf 0.
+→ Wenn eine Karte komplett rausfliegt, bleibt der Glow aktiv, bis neue Karte gerendert wird.
+
+Fix-Vorschlag:
+
+const handleThrowOut = (e) => {
+  setHorizontalDistance(0);
+  // Rest wie bisher
+};
+
+4. Performance / Memory-Leak-Check
+
+Wenn du viele Karten neu renderst (z. B. über State), darf Swing die alten DOM-Knoten nicht weiter tracken.
+Also:
+
+return () => {
+  stack?.destroy();
+  stack = null;
+};
+
+
+→ ist gut, aber achte darauf, dass kein State-Update nach dem Destroy mehr passiert (z. B. setHorizontalDistance in Cleanup → ❌ Crash möglich).
+
+5. CSS für Touch und Layering
+
+Swing nutzt absolute Positionierung, aber dein aktuelles Layout (z. B. GameCard mit Shadow/Glow) muss sicherstellen:
+
+.swing-stack {
+  width: 100%;
+  height: 100%;
+}
+.swing-card {
+  width: 100%;
+  height: 100%;
+}
+
+
+Sonst verschieben sich Karten oder Swipe-Area ist kleiner als erwartet.
+
+6. iOS Safari Besonderheit
+
+In iOS WebViews (z. B. über Capacitor) ist touch-action: none; manchmal nicht genug.
+→ Zusätzlich in CSS:
+
+body, html {
+  overscroll-behavior: none;
+  touch-action: manipulation;
+}
+
+7. Transition-Konflikte
+
+Wenn deine Karten CSS-Transitions (z. B. für Schatten oder Glow) aktiv haben, können sie mit Swing’s transform interferieren → “sticky” Gefühl beim Swipen.
+
+👉 Wichtig: Nur transform-basierte Animationen, keine zusätzlichen transitions auf left, top oder translate.

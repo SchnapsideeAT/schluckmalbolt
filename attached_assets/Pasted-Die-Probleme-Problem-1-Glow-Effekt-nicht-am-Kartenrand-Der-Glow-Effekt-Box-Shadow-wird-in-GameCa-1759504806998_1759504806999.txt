@@ -1,0 +1,67 @@
+Die Probleme:
+Problem 1: Glow-Effekt nicht am Kartenrand
+Der Glow-Effekt (Box-Shadow) wird in GameCard.tsx auf das äußere div-Container angewendet, nicht auf das <img>-Element selbst. Das SVG-Bild hat aber rounded-2xl und das äußere div nicht, daher sitzt der Glow nicht direkt am Kartenrand.
+
+Aktueller Code (GameCard.tsx, Zeile 101):
+
+
+<div 
+  className={`relative inline-block pointer-events-auto ...`}
+  style={{ 
+    boxShadow: `0 0 20px hsl(${categoryColor} / 0.4), 0 0 40px hsl(${categoryColor} / 0.2)`,
+    // ... div hat KEINE rounded corners
+  }}
+>
+  <img 
+    src={cardImageSrc} 
+    className="w-full h-auto object-contain rounded-2xl block"
+    // ... img hat rounded-2xl, aber div nicht
+  />
+</div>
+Problem 2: Swipe-Bereich zu groß
+Das äußere div hat pointer-events-auto, wodurch der gesamte Bereich (inklusive des Glow-Überhangs) swipeable ist. Der Swipe sollte nur auf der tatsächlichen Karte funktionieren, nicht im Glow-Bereich außerhalb.
+
+🛠️ Die Lösung:
+1. Glow-Effekt auf die Karte fixieren
+boxShadow und rounded-2xl auf das img-Element verschieben
+Das äußere div bekommt nur die Transform-Logik für Swipe-Animation
+Dadurch sitzt der Glow direkt am SVG-Rand
+2. Swipe-Bereich auf Karte begrenzen
+pointer-events-auto vom äußeren div auf das img-Element verschieben
+Touch-Handler direkt auf <img> anwenden
+Das äußere div wird zu einem reinen "Transform-Wrapper" ohne Interaktion
+3. Code-Struktur anpassen
+
+// Neuer Aufbau:
+<div 
+  className="relative inline-block pointer-events-none"  // Keine Events!
+  style={{ transform: ... }}  // Nur Transform für Swipe-Animation
+>
+  <img 
+    className="w-full h-auto object-contain rounded-2xl block pointer-events-auto"
+    style={{ 
+      boxShadow: `...`,  // Glow direkt auf img!
+      cursor: ...,
+    }}
+    onTouchStart={onTouchStart}  // Events auf img!
+    onTouchMove={onTouchMove}
+    onTouchEnd={onTouchEnd}
+    // ...
+  />
+</div>
+4. Zusätzliche Optimierung
+border-radius auch im boxShadow berücksichtigen (für perfekte Anpassung)
+overflow: hidden auf img-Container für saubere Ränder
+📋 Was genau geändert wird:
+In src/components/GameCard.tsx:
+
+Zeile 101: pointer-events-auto → pointer-events-none (äußeres div)
+Zeile 103-115: boxShadow und cursor von div-style entfernen
+Zeile 119: pointer-events-auto zum img hinzufügen
+Zeile 119-127: boxShadow, cursor, borderRadius auf img-style hinzufügen
+Zeile 119: Touch-Handler direkt auf img anwenden (nicht auf div)
+Das Ergebnis:
+
+✅ Glow sitzt perfekt am Kartenrand
+✅ Swipe funktioniert nur auf der Karte, nicht im Glow-Bereich
+✅ Keine Performance-Einbußen (gleiche GPU-Optimierungen)
