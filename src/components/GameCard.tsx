@@ -86,14 +86,14 @@ export const GameCard = memo(({
   }
 
   return (
-    <div 
-      className={`relative inline-block pointer-events-none ${
+    <div
+      className={`relative inline-block pointer-events-auto ${
         animationState === 'entering' ? 'animate-enter' : ''
       }`}
-      style={{ 
+      style={{
         width: `${cardMaxWidth}px`,
         maxHeight: `${cardMaxHeight}px`,
-        transform: horizontalDistance !== 0 
+        transform: horizontalDistance !== 0
           ? `translateX(${horizontalDistance}px) rotate(${rotation}deg) translateZ(0)`
           : 'translateZ(0)',
         opacity: horizontalDistance !== 0 ? opacity : undefined,
@@ -102,7 +102,7 @@ export const GameCard = memo(({
       }}
     >
       {/* Pulsating Glow Layer - positioned behind card */}
-      <div 
+      <div
         className="absolute inset-0 rounded-2xl pointer-events-none"
         style={{
           boxShadow: `0 0 20px hsl(${categoryColor} / 1), 0 0 40px hsl(${categoryColor} / 0.8)`,
@@ -110,10 +110,10 @@ export const GameCard = memo(({
           willChange: 'opacity',
         }}
       />
-      
+
       {/* SVG Card Image */}
-      <img 
-        src={cardImageSrc} 
+      <img
+        src={cardImageSrc}
         alt={`${card.category} Card ${card.id}`}
         className="w-full h-auto object-contain rounded-2xl block pointer-events-auto relative"
         draggable={false}

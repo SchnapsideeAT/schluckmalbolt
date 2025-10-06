@@ -16,7 +16,7 @@ import { memo } from "react";
 
 interface SwipeOverlayProps {
   horizontalDistance: number;
-  swipeDirection: 'left' | 'right' | 'up' | null;
+  swipeDirection: 'left' | 'right' | null;
   isSwiping: boolean;
 }
 
